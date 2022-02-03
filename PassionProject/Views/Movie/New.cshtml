@@ -1,0 +1,40 @@
+﻿
+@{
+    ViewBag.Title = "New";
+}
+
+<div id="containershow">
+    <nav>
+        <a class="navlink" href="/Movie/List">Back to Home</a>
+    </nav>
+</div>
+
+<h2>New Movie</h2>
+
+<form method="POST" action="/Movie/Create">
+    <div>
+        <label for="M_Name">Movie Name: </label>
+        <input type="text" name="M_Name" id="M_Name" />
+    </div>
+    <div>
+        <label for="M_Genre">Genre: </label>
+        <input type="text" name="M_Genre" id="M_Genre" />
+    </div>
+    <div>
+        <label for="M_Description">Description: </label>
+        <input type="text" name="M_Description" id="M_Description" />
+    </div>
+    <div>
+        <label for="M_DOR">Date of Release: </label>
+        <input type="text" name="M_DOR" id="M_DOR" />
+    </div>
+    <div>
+        <label for="M_Cost">Cost of renting: </label>
+        <input type="text" name="M_Cost" id="M_Cost" />
+    </div>
+    <div>
+        <input type="submit" value="Create Movie" />
+    </div>
+</form>
+
+

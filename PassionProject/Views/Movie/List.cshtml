@@ -1,0 +1,22 @@
+﻿@model IEnumerable<PassionProject.Models.Movie>
+
+@{
+    ViewBag.Title = "List";
+}
+
+<div id="containerlist">
+    <nav>
+        <a class="navlink" href="/Movie/New">New Movie</a>
+    </nav>
+    <h2>List of Movies</h2>
+    <form action="/Movie/List" method="GET">
+        <input type="text" name="SearchKey" autocomplete="off" />
+        <input type="submit" value="Search" />
+    </form>
+    @foreach (var movie in Model)
+    {
+        <div class="listitem row">
+            <div class="col-md-12"><a href="/Movie/Show/@movie.M_ID">@movie.M_Name</a></div>
+        </div>
+    }
+</div>

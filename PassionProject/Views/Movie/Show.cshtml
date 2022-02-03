@@ -1,0 +1,19 @@
+﻿@model PassionProject.Models.Movie
+
+@{
+    ViewBag.Title = "Show";
+}
+
+<div id="containershow">
+    <nav>
+        <a class="navlink" href="/Movie/List">Back to Home</a>
+        <a class="dellink" href="/Movie/DeleteConfirm/@Model.M_ID">Delete</a>
+        <a class="navlink" href="/Movie/Update/@Model.M_ID">Update</a>
+    </nav>
+    <h2>@Model.M_Name @Model.M_Genre</h2>
+    <p>Movie ID: @Model.M_ID</p>
+    <p>Description: @Model.M_Description</p>
+    <p>Date of Release: @Model.M_DOR.ToString("yyyy-MM-dd")</p>
+    <p>Cost of renting: @Model.M_Cost</p>
+</div>
+
