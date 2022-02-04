@@ -6,32 +6,32 @@
 
 <div id="containershow">
     <nav>
-        <a class="navlink" href="/Movie/Show/@Model.M_ID">Back to Home</a>
+        <a class="navlink" href="/Movie/Show/@Model.Id">Back to Home</a>
     </nav>
 </div>
 
 <h2>Update Movie</h2>
 
-<form method="POST" action="/Movie/Update/@Model.M_ID">
+<form method="POST" action="/Movie/Update/@Model.Id">
     <div>
         <label for="M_Name">Movie Name: </label>
-        <input type="text" name="M_Name" id="M_Name" value="@Model.M_Name" />
+        <input type="text" name="M_Name" id="M_Name" value="@Model.Name" />
     </div>
     <div>
         <label for="M_Genre">Movie Genre: </label>
-        <input type="text" name="M_Genre" id="M_Genre" value="@Model.M_Genre" />
+        <input type="text" name="M_Genre" id="M_Genre" value="@Model.Genre" />
     </div>
     <div>
         <label for="M_Description">Description: </label>
-        <input type="text" name="M_Description" id="M_Description" value="@Model.M_Description" />
+        <input type="text" name="M_Description" id="M_Description" value="@Model.Description" />
     </div>
     <div>
         <label for="M_DOR">Date of Release: </label>
-        <input type="text" name="M_DOR" id="M_DOR" value="@Model.M_DOR" />
+        <input type="text" name="M_DOR" id="M_DOR" value="@Model.DOR" />
     </div>
     <div>
         <label for="M_Cost">Cost of renting: </label>
-        <input type="text" name="M_Cost" id="M_Cost" value="@Model.M_Cost" />
+        <input type="text" name="M_Cost" id="M_Cost" value="@Model.Cost" />
     </div>
     <div>
         <input type="submit" value="Update Movie" />

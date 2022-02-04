@@ -71,10 +71,10 @@ namespace PassionProject.Controllers
             Debug.WriteLine(M_Name);
 
             Movie NewMovie = new Movie();
-            NewMovie.M_Name = M_Name;
-            NewMovie.M_Genre = M_Genre;
-            NewMovie.M_Description = M_Description;
-            NewMovie.M_Cost = M_Cost;
+            NewMovie.Name = M_Name;
+            NewMovie.Genre = M_Genre;
+            NewMovie.Description = M_Description;
+            NewMovie.Cost = M_Cost;
 
             MovieDataController controller = new MovieDataController();
             controller.AddMovie(NewMovie);
@@ -116,13 +116,14 @@ namespace PassionProject.Controllers
         /// }
         /// </example>
         [HttpPost]
-        public ActionResult Update(int id, string M_Name, string M_Genre, string M_Description, decimal M_Cost)
+        public ActionResult Update(int id, string M_Name, string M_Genre, string M_Description, DateTime M_DOR, decimal M_Cost)
         {
             Movie MovieInfo = new Movie();
-            MovieInfo.M_Name = M_Name;
-            MovieInfo.M_Genre = M_Genre;
-            MovieInfo.M_Description = M_Description;
-            MovieInfo.M_Cost = M_Cost;
+            MovieInfo.Name = M_Name;
+            MovieInfo.Genre = M_Genre;
+            MovieInfo.Description = M_Description;
+            MovieInfo.DOR = M_DOR;
+            MovieInfo.Cost = M_Cost;
 
             MovieDataController controller = new MovieDataController();
             controller.UpdateMovie(id, MovieInfo);

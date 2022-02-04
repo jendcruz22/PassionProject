@@ -7,16 +7,16 @@
 <div id="containershow">
     <nav>
         <a class="navlink" href="/Movie/List">Back to Home</a>
-        <a class="dellink" href="/Movie/DeleteConfirm/@Model.M_ID">Delete</a>
-        <a class="navlink" href="/Movie/Update/@Model.M_ID">Update</a>
+        <a class="dellink" href="/Movie/DeleteConfirm/@Model.Id">Delete</a>
+        <a class="navlink" href="/Movie/Update/@Model.Id">Update</a>
     </nav>
-    <h2>@Model.M_Name</h2>
+    <h2>@Model.Name</h2>
     <div>
-        <p>Genre: @Model.M_Genre</p>
-        <p>Movie ID: @Model.M_ID</p>
-        <p>Description: @Model.M_Description</p>
-        <p>Date of Release: @Model.M_DOR.ToString("yyyy-MM-dd")</p>
-        <p>Cost of renting: @Model.M_Cost</p>
+        <p>Genre: @Model.Genre</p>
+        <p>Movie ID: @Model.Id</p>
+        <p>Description: @Model.Description</p>
+        <p>Date of Release: @Model.DOR.ToString("yyyy-MM-dd")</p>
+        <p>Cost of renting: @Model.Cost</p>
     </div>
     <table>
         <tr>
@@ -26,13 +26,13 @@
             <th>Rented on</th>
             <th>Rented till</th>
         </tr>
-        <tr>
-            <td>@Model.Entry_ID</td>
-            <td>@Model.R_FName</td>
-            <td>@Model.R_LName</td>
-            <td>@Model.R_FDate</td>
-            <td>@Model.R_TDate</td>
-        </tr>
+        @*<tr>
+            <td>@Model.Id</td>
+            <td>@Model.FName</td>
+            <td>@Model.LName</td>
+            <td>@Model.FDate</td>
+            <td>@Model.TDate</td>
+        </tr>*@
         
     </table>
 </div>

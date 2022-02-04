@@ -9,27 +9,18 @@ namespace PassionProject.Models
     {
 
         //What describes a movie?
-        public int M_ID;
+        public int Id { get; set; }
 
-        public string M_Name;
+        public string Name { get; set; }
 
-        public string M_Genre;
+        public string Genre { get; set; }
 
-        public string M_Description;
+        public string Description { get; set; }
 
-        public DateTime M_DOR;
+        public DateTime DOR { get; set; }
 
-        public decimal M_Cost;
+        public decimal Cost { get; set; }
 
-        public int Entry_ID;
-
-        public string R_FName;
-
-        public string R_LName;
-
-        public DateTime R_FDate;
-
-        public DateTime R_TDate;
-
+        public List<Rental> Rentals { get; set; }
     }
 }
