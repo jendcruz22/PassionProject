@@ -6,4 +6,7 @@ Passion project, also known as Blockbuster's admin system is an ASP.NET Web Appl
 This application allows you to perform CRUD operations on either tables i.e. the movies or the rentals.
 
 ### **Current state of the project**
-*   The application hasn't been developed completely. It displays all the movies in the database. However, the movie rental's data is yet to be displayed along with it's CRUD operations feature.
+* The application hasn't been developed completely. It displays all the movies in the database as well as the latest rental of the movie.
+* Pending tasks:
+    * To display all the rentals of a movie listed in the database.
+    * To include add update functionality for rentals as well.
