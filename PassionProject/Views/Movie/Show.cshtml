@@ -4,7 +4,7 @@
     ViewBag.Title = "Show";
 }
 
-<div id="containershow">
+<tr id="containershow">
     <nav>
         <a class="navlink" href="/Movie/List">Back to Home</a>
         <a class="dellink" href="/Movie/DeleteConfirm/@Model.Id">Delete</a>
@@ -26,14 +26,16 @@
             <th>Rented on</th>
             <th>Rented till</th>
         </tr>
-        @*<tr>
-            <td>@Model.Id</td>
-            <td>@Model.FName</td>
-            <td>@Model.LName</td>
-            <td>@Model.FDate</td>
-            <td>@Model.TDate</td>
-        </tr>*@
-        
+        @foreach (var rental in Model.Rentals)
+        {
+            <tr>
+                <td>@rental.Id</td>
+                <td>@rental.FName</td>
+                <td>@rental.LName</td>
+                <td>@rental.FDate</td>
+                <td>@rental.TDate</td>
+            </tr>   
+        }
+
     </table>
-</div>
 

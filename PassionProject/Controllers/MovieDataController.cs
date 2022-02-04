@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Data.Entity;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
@@ -26,12 +27,12 @@ namespace PassionProject.Controllers
                 return Blockbuster.Movies.Where(m => m.Name.Contains(SearchKey));
             }
         }
-
+ 
         [HttpGet]
         [Route("api/moviedata/findmovie/{id}")]
         public Movie FindMovie(int id)
         {
-            return Blockbuster.Movies.SingleOrDefault(m => m.Id == id);
+            return Blockbuster.Movies.Include(m => m.Rentals).SingleOrDefault(m => m.Id == id);
         }
 
         /// <summary>
