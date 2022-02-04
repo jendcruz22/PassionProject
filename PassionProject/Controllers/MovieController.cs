@@ -62,7 +62,7 @@ namespace PassionProject.Controllers
 
         // POST : /Movie/Create
         [HttpPost]
-        public ActionResult Create(string M_Name, string M_Genre, string M_Description, decimal M_Cost)
+        public ActionResult Create(string M_Name, string M_Genre, string M_Description, DateTime M_DOR, decimal M_Cost)
         {
             //Identify this method is running 
             //Identify the inputs provided from the form
@@ -73,6 +73,7 @@ namespace PassionProject.Controllers
             Movie NewMovie = new Movie();
             NewMovie.Name = M_Name;
             NewMovie.Genre = M_Genre;
+            NewMovie.DOR = M_DOR;
             NewMovie.Description = M_Description;
             NewMovie.Cost = M_Cost;
 

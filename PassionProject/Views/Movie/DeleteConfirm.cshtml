@@ -6,12 +6,12 @@
 
 <div id="containershow">
     <nav>
-        <a class="navlink" href="/Movie/Show/@Model.M_ID">Cancel</a>
+        <a class="navlink" href="/Movie/Show/@Model.Id">Cancel</a>
     </nav>
-    <h2>Are you sure you want to delete @Model.M_Name @Model.M_Genre?</h2>
+    <h2>Are you sure you want to delete @Model.Name?</h2>
     <p>This action cannot be undone.</p>
 
-    <form method="POST" action="/Movie/Delete/@Model.M_ID">
+    <form method="POST" action="/Movie/Delete/@Model.Id">
         <button class="delbutton">
             Confirm Delete
         </button>
