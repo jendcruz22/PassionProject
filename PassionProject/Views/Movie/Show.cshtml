@@ -10,10 +10,30 @@
         <a class="dellink" href="/Movie/DeleteConfirm/@Model.M_ID">Delete</a>
         <a class="navlink" href="/Movie/Update/@Model.M_ID">Update</a>
     </nav>
-    <h2>@Model.M_Name @Model.M_Genre</h2>
-    <p>Movie ID: @Model.M_ID</p>
-    <p>Description: @Model.M_Description</p>
-    <p>Date of Release: @Model.M_DOR.ToString("yyyy-MM-dd")</p>
-    <p>Cost of renting: @Model.M_Cost</p>
+    <h2>@Model.M_Name</h2>
+    <div>
+        <p>Genre: @Model.M_Genre</p>
+        <p>Movie ID: @Model.M_ID</p>
+        <p>Description: @Model.M_Description</p>
+        <p>Date of Release: @Model.M_DOR.ToString("yyyy-MM-dd")</p>
+        <p>Cost of renting: @Model.M_Cost</p>
+    </div>
+    <table>
+        <tr>
+            <th>Entry ID</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Rented on</th>
+            <th>Rented till</th>
+        </tr>
+        <tr>
+            <td>@Model.Entry_ID</td>
+            <td>@Model.R_FName</td>
+            <td>@Model.R_LName</td>
+            <td>@Model.R_FDate</td>
+            <td>@Model.R_TDate</td>
+        </tr>
+        
+    </table>
 </div>
 

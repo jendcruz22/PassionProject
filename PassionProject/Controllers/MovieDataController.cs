@@ -96,7 +96,7 @@ namespace PassionProject.Controllers
             MySqlCommand Cmd = Conn.CreateCommand();
 
             //setting the command query to the string we generated in query variable
-            Cmd.CommandText = "Select * from movies where m_id = @id";
+            Cmd.CommandText = "Select movies.M_ID, movies.M_Name, movies.M_Genre, movies.M_DOR, movies.M_Cost, movies.M_Description, rentals.Entry_ID, rentals.R_FName, rentals.R_LName, rentals.R_FDate, rentals.R_TDate from movies left join rentals on movies.M_ID = rentals.M_ID where movies.m_id = @id"; 
             Cmd.Parameters.AddWithValue("@id", id);
             Cmd.Prepare();
 
@@ -110,16 +110,27 @@ namespace PassionProject.Controllers
                 string M_Name = ResultSet["m_name"].ToString();
                 string M_Genre = ResultSet["m_genre"].ToString();
                 string M_Description = ResultSet["m_description"].ToString();
-                // DateTime M_DOR = (DateTime)ResultSet["m_dor"];
+                DateTime M_DOR = (DateTime)ResultSet["m_dor"];
                 decimal M_Cost = (decimal)ResultSet["m_cost"];
+
+                int Entry_ID = (int)ResultSet["entry_id"];
+                string R_FName = ResultSet["r_fname"].ToString();
+                string R_LName = ResultSet["r_lname"].ToString();
+                DateTime R_FDate = (DateTime)ResultSet["r_fdate"];
+                DateTime R_TDate = (DateTime)ResultSet["r_tdate"];
 
                 NewMovie.M_ID = M_ID;
                 NewMovie.M_Name = M_Name;
                 NewMovie.M_Genre = M_Genre;
                 NewMovie.M_Description = M_Description;
-                // NewMovie.M_DOR = M_DOR;
+                NewMovie.M_DOR = M_DOR;
                 NewMovie.M_Cost = M_Cost;
 
+                NewMovie.Entry_ID = Entry_ID;
+                NewMovie.R_FName = R_FName;
+                NewMovie.R_LName = R_LName;
+                NewMovie.R_FDate = R_FDate;
+                NewMovie.R_TDate = R_TDate;
             }
 
             return NewMovie;
