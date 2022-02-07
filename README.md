@@ -8,5 +8,4 @@ This application allows you to perform CRUD operations on either tables i.e. the
 ### **Current state of the project**
 * The application hasn't been developed completely. It displays all the movies in the database as well as the latest rental of the movie.
 * Pending tasks:
-    * To display all the rentals of a movie listed in the database.
     * To include add update functionality for rentals as well.
