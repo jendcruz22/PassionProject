@@ -1,5 +1,4 @@
 ﻿@model PassionProject.Models.Movie
-
 @{
     ViewBag.Title = "Show";
 }
@@ -19,7 +18,7 @@
         <p>Cost of renting: @Model.Cost</p>
     </div>
 
-    <a class="newRentalBtn" href="/Movie/NewMovieRental">New Rental</a>
+    <a class="newRentalBtn" href="/Movie/NewMovieRental/@Model.Id">New Rental</a>
 
     <table>
         <tr>

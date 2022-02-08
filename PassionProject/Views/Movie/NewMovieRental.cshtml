@@ -1,4 +1,5 @@
-﻿
+﻿@model PassionProject.Models.Movie
+
 @{
     ViewBag.Title = "NewMovieRental";
 }
@@ -6,6 +7,7 @@
 <div id="containershow">
     <nav>
         <a class="navlink" href="/Movie/List">Back to Home</a>
+        <a class="navlink" href="/Movie/Show/@Model.Id">Back to the Movie</a>
     </nav>
 </div>
 
@@ -22,7 +24,7 @@
     </div>
     <div>
         <label for="MovieId">Movie Id: </label>
-        <input type="number" name="MovieId" id="MovieId" />
+        <input type="number" name="MovieId" id="MovieId" value="@Model.Id" />
     </div>
     <div>
         <label for="FDate">Date of Purchase (yyyy-mm-dd): </label>

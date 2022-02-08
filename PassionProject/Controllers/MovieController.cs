@@ -60,10 +60,15 @@ namespace PassionProject.Controllers
             return View();
         }
 
-        // GET : /Movie/NewMovieRental
-        public ActionResult NewMovieRental()
+        // GET : /Movie/NewMovieRental/{id}
+        [HttpGet]
+        [Route("Movie/NewMovieRental/{id}")]
+        public ActionResult NewMovieRental(int id)
         {
-            return View();
+            MovieDataController controller = new MovieDataController();
+            Movie SelectedMovie = controller.FindMovie(id);
+
+            return View(SelectedMovie);
         }
 
         // POST : /Movie/Create
