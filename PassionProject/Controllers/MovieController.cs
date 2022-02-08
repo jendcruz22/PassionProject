@@ -60,6 +60,12 @@ namespace PassionProject.Controllers
             return View();
         }
 
+        // GET : /Movie/NewMovieRental
+        public ActionResult NewMovieRental()
+        {
+            return View();
+        }
+
         // POST : /Movie/Create
         [HttpPost]
         public ActionResult Create(string M_Name, string M_Genre, string M_Description, DateTime M_DOR, decimal M_Cost)
@@ -79,6 +85,23 @@ namespace PassionProject.Controllers
 
             MovieDataController controller = new MovieDataController();
             controller.AddMovie(NewMovie);
+
+            return RedirectToAction("List");
+        }
+
+        // POST : /Movie/CreateRental
+        [HttpPost]
+        public ActionResult CreateRental(string FName, string LName, int MovieId, DateTime FDate, DateTime TDate)
+        {
+            Rental NewMovieRental = new Rental();
+            NewMovieRental.FName = FName;
+            NewMovieRental.LName = LName;
+            NewMovieRental.MovieId = MovieId;
+            NewMovieRental.FDate = FDate;
+            NewMovieRental.TDate = TDate;
+
+            MovieDataController controller = new MovieDataController();
+            controller.AddMovieRental(NewMovieRental);
 
             return RedirectToAction("List");
         }

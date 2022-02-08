@@ -1,0 +1,40 @@
+﻿
+@{
+    ViewBag.Title = "NewMovieRental";
+}
+
+<div id="containershow">
+    <nav>
+        <a class="navlink" href="/Movie/List">Back to Home</a>
+    </nav>
+</div>
+
+<h2>New Rental</h2>
+
+<form method="POST" action="/Movie/CreateRental">
+    <div>
+        <label for="FName">First Name: </label>
+        <input type="text" name="FName" id="FName" />
+    </div>
+    <div>
+        <label for="LName">Last Name: </label>
+        <input type="text" name="LName" id="LName" />
+    </div>
+    <div>
+        <label for="MovieId">Movie Id: </label>
+        <input type="number" name="MovieId" id="MovieId" />
+    </div>
+    <div>
+        <label for="FDate">Date of Purchase (yyyy-mm-dd): </label>
+        <input type="text" name="FDate" id="FDate" />
+    </div>
+    <div>
+        <label for="TDate">Date of Return (yyyy-mm-dd): </label>
+        <input type="text" name="TDate" id="TDate" />
+    </div>
+    <div>
+        <input type="submit" value="Add Rental" />
+    </div>
+</form>
+
+

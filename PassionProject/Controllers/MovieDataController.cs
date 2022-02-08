@@ -58,6 +58,13 @@ namespace PassionProject.Controllers
             Blockbuster.SaveChanges();
         }
 
+        [HttpPost]
+        public void AddMovieRental(Rental NewMovieRental)
+        {
+            Blockbuster.Rentals.Add(NewMovieRental);
+            Blockbuster.SaveChanges();
+        }
+
         public void UpdateMovie(int id, [FromBody] Movie MovieInfo)
         {
             var movie = Blockbuster.Movies.SingleOrDefault(m => m.Id == id);

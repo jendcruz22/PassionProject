@@ -18,6 +18,9 @@
         <p>Date of Release: @Model.DOR.ToString("yyyy-MM-dd")</p>
         <p>Cost of renting: @Model.Cost</p>
     </div>
+
+    <a class="newRentalBtn" href="/Movie/NewMovieRental">New Rental</a>
+
     <table>
         <tr>
             <th>Entry ID</th>
@@ -34,7 +37,8 @@
                 <td>@rental.LName</td>
                 <td>@rental.FDate.ToString("yyyy-MM-dd")</td>
                 <td>@rental.TDate.ToString("yyyy-MM-dd")</td>
-            </tr>   
+            </tr>
+
         }
 
     </table>

@@ -51,6 +51,11 @@ nav {
     margin: 10px 0;
 }
 
+.newRentalBtn {
+    display: block;
+    width: 300px;
+}
+
 .inputrow {
     margin-bottom: 15px;
     width: 40%;
