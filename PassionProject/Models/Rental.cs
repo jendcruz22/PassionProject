@@ -7,7 +7,7 @@ namespace PassionProject.Models
 {
     public class Rental
     {
-
+        // What describes the rentals table?
         public int Id { get; set; }
         public int MovieId { get; set; }
 

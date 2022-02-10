@@ -20,7 +20,7 @@ namespace PassionProject.Controllers
         [HttpGet]
         public ActionResult List(string SearchKey = null)
         {
-            //this class will help us gather information from the db
+            //this class will help us gather information from the blockbuster database
             MovieDataController controller = new MovieDataController();
             IEnumerable<Movie> Movies = controller.ListMovies(SearchKey);
             return View(Movies);
@@ -75,12 +75,6 @@ namespace PassionProject.Controllers
         [HttpPost]
         public ActionResult Create(string M_Name, string M_Genre, string M_Description, DateTime M_DOR, decimal M_Cost)
         {
-            //Identify this method is running 
-            //Identify the inputs provided from the form
-
-            Debug.WriteLine("I have accessed the Create Method!");
-            Debug.WriteLine(M_Name);
-
             Movie NewMovie = new Movie();
             NewMovie.Name = M_Name;
             NewMovie.Genre = M_Genre;
@@ -112,11 +106,11 @@ namespace PassionProject.Controllers
         }
 
         /// <summary>
-        /// Routes a dynamically generated "Movie Update" Page. Gathers information from the database.
+        /// Routes a dynamically generated "Movie Update" Page. Gathers information from the blockbuster database.
         /// </summary>
-        /// <param name="id"></param>
-        /// <returns>A dynamic "Update Movie" webpage which proves the current information of the movie and asks the user for new information as part of a form</returns>
-        // <example>GET : /Movie/Update/{id}</example>
+        /// <param name="id">Id of the Movie</param>
+        /// <returns>A dynamic "Update Movie" webpage which provides the current information of the movie and asks the user for new information as part of a form</returns>
+        // <example>GET : /Movie/Update/5</example>
         public ActionResult Update(int id)
         {
             MovieDataController controller = new MovieDataController();
@@ -128,20 +122,22 @@ namespace PassionProject.Controllers
         /// <summary>
         /// Receive a POST request containing information about an existing movie in the system, with new values. Conveys this information to the API, and redirects to the "Movie Show" page of our updated movie.
         /// </summary>
-        /// <param name="id"></param>
-        /// <param name="M_Name"></param>
-        /// <param name="M_Genre"></param>
-        /// <param name="M_Description"></param>
-        /// <param name="M_Cost"></param>
+        /// <param name="id">Id of the Movie to update</param>
+        /// <param name="M_Name">The updated movie name of the movie</param>
+        /// <param name="M_Genre">The updated genre of the movie</param>
+        /// <param name="M_Description">The updated description of the movie</param>
+        /// <param name="M_DOR">The updated date of release of the movie</param>
+        /// <param name="M_Cost">The updated price of renting the movie</param>
         /// <returns>A dynamic webpage which provides the current information of the movie.</returns>
         /// <example>
         // POST : /Movie/Update/{id}
         /// FORM DATTA / POST DATA / REQUEST BODY
         /// {
-        /// "M_Name":"Jenny",
-        /// "M_Genre":"Dcruz",
-        /// "M_Description":"N01469587",
-        /// "M_Cost":"3434.23"
+        /// "M_Name":"Pulp Fiction",
+        /// "M_Genre":"Crime, Drama",
+        /// "M_Description":"The lives of two mob hitmen, a boxer, a gangster and his wife, and a pair of diner bandits intertwine in four tales of violence and redemption.",
+        /// "M_DOR":"1994-10-14",
+        /// "M_Cost":"20.23"
         /// }
         /// </example>
         [HttpPost]
