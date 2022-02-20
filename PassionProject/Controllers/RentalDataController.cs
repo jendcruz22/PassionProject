@@ -13,20 +13,20 @@ namespace PassionProject.Controllers
         // The database context class which allows us to access our MySQL Database.
         private BlockbusterDbContext Blockbuster = new BlockbusterDbContext();
 
-        public Rental getRentalById(int id)
+        public Rental GetRentalById(int id)
         {
             return Blockbuster.Rentals.SingleOrDefault(r => r.Id == id);
         }
 
-        public void UpdateRental(int id, [FromBody] Rental RentalInfo)
+        public void UpdateRental(int id, [FromBody] Rental rentalInfo)
         {
             var rental = Blockbuster.Rentals.SingleOrDefault(r => r.Id == id);
             if (rental != null)
             {
-                rental.FName = RentalInfo.FName;
-                rental.LName = RentalInfo.LName;
-                rental.FDate = RentalInfo.FDate;
-                rental.TDate = RentalInfo.TDate;
+                rental.FName = rentalInfo.FName;
+                rental.LName = rentalInfo.LName;
+                rental.FDate = rentalInfo.FDate;
+                rental.TDate = rentalInfo.TDate;
 
                 Blockbuster.SaveChanges();
             }

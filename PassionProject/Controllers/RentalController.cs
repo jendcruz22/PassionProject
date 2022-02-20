@@ -13,21 +13,21 @@ namespace PassionProject.Controllers
         public ActionResult Edit(int id)
         {
             var controller = new RentalDataController();
-            Rental SelectedRental = controller.getRentalById(id);
-            return View(SelectedRental);
+            Rental selectedRental = controller.GetRentalById(id);
+            return View(selectedRental);
         }
 
         [HttpPost]
-        public ActionResult Update(int id, string FName, string LName, DateTime FDate, DateTime TDate)
+        public ActionResult Update(int id, string fName, string lName, DateTime fDate, DateTime tDate)
         {
-            Rental RentalInfo = new Rental();
-            RentalInfo.FName = FName;
-            RentalInfo.LName = LName;
-            RentalInfo.FDate = FDate;
-            RentalInfo.TDate = TDate;
+            Rental rentalInfo = new Rental();
+            rentalInfo.FName = fName;
+            rentalInfo.LName = lName;
+            rentalInfo.FDate = fDate;
+            rentalInfo.TDate = tDate;
 
             RentalDataController controller = new RentalDataController();
-            controller.UpdateRental(id, RentalInfo);
+            controller.UpdateRental(id, rentalInfo);
 
             return Redirect("/Movie/List");
         }
@@ -36,9 +36,9 @@ namespace PassionProject.Controllers
         public ActionResult DeleteRentalConfirm(int id)
         {
             RentalDataController controller = new RentalDataController();
-            Rental NewRental = controller.getRentalById(id);
+            Rental newRental = controller.GetRentalById(id);
 
-            return View(NewRental);
+            return View(newRental);
         }
 
         // POST : /Rental/DeleteRental/{id}

@@ -15,24 +15,24 @@
 
 <form method="POST" action="/Movie/CreateRental">
     <div>
-        <label for="FName">First Name: </label>
-        <input type="text" name="FName" id="FName" />
+        <label for="fName">First Name: </label>
+        <input type="text" name="fName" id="fName" />
     </div>
     <div>
-        <label for="LName">Last Name: </label>
-        <input type="text" name="LName" id="LName" />
+        <label for="lName">Last Name: </label>
+        <input type="text" name="lName" id="lName" />
     </div>
     <div>
-        <label for="MovieId">Movie Id: </label>
-        <input type="number" name="MovieId" id="MovieId" value="@Model.Id" />
+        <label for="movieId">Movie Id: </label>
+        <input type="number" name="movieId" id="movieId" value="@Model.Id" />
     </div>
     <div>
-        <label for="FDate">Date of Purchase (yyyy-mm-dd): </label>
-        <input type="text" name="FDate" id="FDate" />
+        <label for="fDate">Date of Purchase (yyyy-mm-dd): </label>
+        <input type="date" name="fDate" id="fDate" />
     </div>
     <div>
-        <label for="TDate">Date of Return (yyyy-mm-dd): </label>
-        <input type="text" name="TDate" id="TDate" />
+        <label for="tDate">Date of Return (yyyy-mm-dd): </label>
+        <input type="date" name="TDate" id="TDate" />
     </div>
     <div>
         <input type="submit" value="Add Rental" />

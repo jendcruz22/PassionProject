@@ -18,12 +18,12 @@ namespace PassionProject.Controllers
 
         // GET: /Movie/List
         [HttpGet]
-        public ActionResult List(string SearchKey = null)
+        public ActionResult List(string searchKey = null)
         {
             //this class will help us gather information from the blockbuster database
             MovieDataController controller = new MovieDataController();
-            IEnumerable<Movie> Movies = controller.ListMovies(SearchKey);
-            return View(Movies);
+            IEnumerable<Movie> movies = controller.ListMovies(searchKey);
+            return View(movies);
         }
 
         // GET : /Movie/Show/{id}
@@ -32,18 +32,18 @@ namespace PassionProject.Controllers
         public ActionResult Show(int id)
         {
             MovieDataController controller = new MovieDataController();
-            Movie SelectedMovie = controller.FindMovie(id);
+            Movie selectedMovie = controller.FindMovie(id);
 
-            return View(SelectedMovie);
+            return View(selectedMovie);
         }
 
         // GET : /Movie/DeleteConfirm/{id}
         public ActionResult DeleteConfirm(int id)
         {
             MovieDataController controller = new MovieDataController();
-            Movie NewMovie = controller.FindMovie(id);
+            Movie newMovie = controller.FindMovie(id);
 
-            return View(NewMovie);
+            return View(newMovie);
         }
 
         // POST : /Movie/Delete/{id}
@@ -67,25 +67,25 @@ namespace PassionProject.Controllers
         public ActionResult NewMovieRental(int id)
         {
             MovieDataController controller = new MovieDataController();
-            Movie SelectedMovie = controller.FindMovie(id);
+            Movie selectedMovie = controller.FindMovie(id);
 
-            return View(SelectedMovie);
+            return View(selectedMovie);
         }
 
         // POST : /Movie/Create
         [HttpPost]
-        public ActionResult Create(string M_Poster, string M_Name, string M_Genre, string M_Description, DateTime M_DOR, decimal M_Cost)
+        public ActionResult Create(string poster, string name, string genre, string description, DateTime dor, decimal cost)
         {
-            Movie NewMovie = new Movie();
-            NewMovie.Poster = M_Poster;
-            NewMovie.Name = M_Name;
-            NewMovie.Genre = M_Genre;
-            NewMovie.DOR = M_DOR;
-            NewMovie.Description = M_Description;
-            NewMovie.Cost = M_Cost;
+            Movie newMovie = new Movie();
+            newMovie.Poster = poster;
+            newMovie.Name = name;
+            newMovie.Genre = genre;
+            newMovie.DOR = dor;
+            newMovie.Description = description;
+            newMovie.Cost = cost;
 
             MovieDataController controller = new MovieDataController();
-            controller.AddMovie(NewMovie);
+            controller.AddMovie(newMovie);
 
             return RedirectToAction("List");
         }
@@ -94,15 +94,15 @@ namespace PassionProject.Controllers
         [HttpPost]
         public ActionResult CreateRental(string FName, string LName, int MovieId, DateTime FDate, DateTime TDate)
         {
-            Rental NewMovieRental = new Rental();
-            NewMovieRental.FName = FName;
-            NewMovieRental.LName = LName;
-            NewMovieRental.MovieId = MovieId;
-            NewMovieRental.FDate = FDate;
-            NewMovieRental.TDate = TDate;
+            Rental newMovieRental = new Rental();
+            newMovieRental.FName = FName;
+            newMovieRental.LName = LName;
+            newMovieRental.MovieId = MovieId;
+            newMovieRental.FDate = FDate;
+            newMovieRental.TDate = TDate;
 
             MovieDataController controller = new MovieDataController();
-            controller.AddMovieRental(NewMovieRental);
+            controller.AddMovieRental(newMovieRental);
 
             return RedirectToAction("List");
         }
@@ -116,46 +116,46 @@ namespace PassionProject.Controllers
         public ActionResult Update(int id)
         {
             MovieDataController controller = new MovieDataController();
-            Movie SelectedMovie = controller.FindMovie(id);
-            return View(SelectedMovie);
+            Movie selectedMovie = controller.FindMovie(id);
+            return View(selectedMovie);
         }
 
         /// <summary>
         /// Receive a POST request containing information about an existing movie in the system, with new values. Conveys this information to the API, and redirects to the "Movie Show" page of our updated movie.
         /// </summary>
         /// <param name="id">Id of the Movie to update</param>
-        /// <param name="M_Poster">The updated link to the movie poster</param>
-        /// <param name="M_Name">The updated movie name of the movie</param>
-        /// <param name="M_Genre">The updated genre of the movie</param>
-        /// <param name="M_Description">The updated description of the movie</param>
-        /// <param name="M_DOR">The updated date of release of the movie</param>
-        /// <param name="M_Cost">The updated price of renting the movie</param>
+        /// <param name="poster">The updated link to the movie poster</param>
+        /// <param name="name">The updated movie name of the movie</param>
+        /// <param name="genre">The updated genre of the movie</param>
+        /// <param name="description">The updated description of the movie</param>
+        /// <param name="dor">The updated date of release of the movie</param>
+        /// <param name="cost">The updated price of renting the movie</param>
         /// <returns>A dynamic webpage which provides the current information of the movie.</returns>
         /// <example>
         // POST : /Movie/Update/{id}
         /// FORM DATTA / POST DATA / REQUEST BODY
         /// {
-        /// "M_Name":"Pulp Fiction",
-        /// "M_Poster":"image link",
-        /// "M_Genre":"Crime, Drama",
-        /// "M_Description":"The lives of two mob hitmen, a boxer, a gangster and his wife, and a pair of diner bandits intertwine in four tales of violence and redemption.",
-        /// "M_DOR":"1994-10-14",
-        /// "M_Cost":"20.23"
+        /// "name":"Pulp Fiction",
+        /// "poster":"image link",
+        /// "genre":"Crime, Drama",
+        /// "description":"The lives of two mob hitmen, a boxer, a gangster and his wife, and a pair of diner bandits intertwine in four tales of violence and redemption.",
+        /// "dor":"1994-10-14",
+        /// "cost":"20.23"
         /// }
         /// </example>
         [HttpPost]
-        public ActionResult Update(int id, string M_Poster, string M_Name, string M_Genre, string M_Description, DateTime M_DOR, decimal M_Cost)
+        public ActionResult Update(int id, string poster, string name, string genre, string description, DateTime dor, decimal cost)
         {
-            Movie MovieInfo = new Movie();
-            MovieInfo.Poster = M_Poster;
-            MovieInfo.Name = M_Name;
-            MovieInfo.Genre = M_Genre;
-            MovieInfo.Description = M_Description;
-            MovieInfo.DOR = M_DOR;
-            MovieInfo.Cost = M_Cost;
+            Movie movieInfo = new Movie();
+            movieInfo.Poster = poster;
+            movieInfo.Name = name;
+            movieInfo.Genre = genre;
+            movieInfo.Description = description;
+            movieInfo.DOR = dor;
+            movieInfo.Cost = cost;
 
             MovieDataController controller = new MovieDataController();
-            controller.UpdateMovie(id, MovieInfo);
+            controller.UpdateMovie(id, movieInfo);
 
             return RedirectToAction("Show/" + id);
         }

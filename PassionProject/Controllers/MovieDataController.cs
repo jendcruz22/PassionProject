@@ -25,16 +25,16 @@ namespace PassionProject.Controllers
         /// </returns>
         /// <example>GET api/MovieData/ListAuthors -> {Author Object, Author Object, Author Object...}</example>
         [HttpGet]
-        [Route("api/moviedata/listmovies/{SearchKey?}")]
-        public IEnumerable<Movie> ListMovies(string SearchKey = null)
+        [Route("api/moviedata/listmovies/{searchKey?}")]
+        public IEnumerable<Movie> ListMovies(string searchKey = null)
         {
-            if (SearchKey == null)
+            if (searchKey == null)
             {
                 return Blockbuster.Movies;
             }
             else
             {
-                return Blockbuster.Movies.Where(m => m.Name.Contains(SearchKey));
+                return Blockbuster.Movies.Where(m => m.Name.Contains(searchKey));
             }
         }
 
@@ -70,30 +70,30 @@ namespace PassionProject.Controllers
         /// <summary>
         /// Adds a Movie to the MySQL Database.
         /// </summary>
-        /// <param name="NewMovie">An object with fields that map to the columns of the movie's table. | Non-Deterministic.</param>
+        /// <param name="newMovie">An object with fields that map to the columns of the movie's table. | Non-Deterministic.</param>
         /// <example>
         /// POST api/MovieData/AddMovie
         /// FORM DATA / POST DATA / REQUEST BODY 
         /// {
-        /// "M_Name":"Pulp Fiction",
-        /// "M_Poster":"image link",
-        /// "M_Genre":"Crime, Drama",
-        /// "M_Description":"The lives of two mob hitmen, a boxer, a gangster and his wife, and a pair of diner bandits intertwine in four tales of violence and redemption.",
-        /// "M_DOR":"1994-10-14",
-        /// "M_Cost":"20.23"
+        /// "name":"Pulp Fiction",
+        /// "poster":"image link",
+        /// "genre":"Crime, Drama",
+        /// "description":"The lives of two mob hitmen, a boxer, a gangster and his wife, and a pair of diner bandits intertwine in four tales of violence and redemption.",
+        /// "dor":"1994-10-14",
+        /// "cost":"20.23"
         /// }
         /// </example>
         [HttpPost]
-        public void AddMovie(Movie NewMovie)
+        public void AddMovie(Movie newMovie)
         {
-            Blockbuster.Movies.Add(NewMovie);
+            Blockbuster.Movies.Add(newMovie);
             Blockbuster.SaveChanges();
         }
 
         /// <summary>
         /// Adds a Movie Rental to the MySQL Database.
         /// </summary>
-        /// <param name="NewMovieRental">An object with fields that map to the columns of the rental's table. | Non-Deterministic.</param>
+        /// <param name="newMovieRental">An object with fields that map to the columns of the rental's table. | Non-Deterministic.</param>
         /// <example>
         /// POST api/MovieData/AddMovieRental
         /// FORM DATA / POST DATA / REQUEST BODY 
@@ -107,16 +107,16 @@ namespace PassionProject.Controllers
         /// }
         /// </example>
         [HttpPost]
-        public void AddMovieRental(Rental NewMovieRental)
+        public void AddMovieRental(Rental newMovieRental)
         {
-            Blockbuster.Rentals.Add(NewMovieRental);
+            Blockbuster.Rentals.Add(newMovieRental);
             Blockbuster.SaveChanges();
         }
 
         /// <summary>
         /// Updates an Movie on the MySQL Database. | Non-Deterministic.
         /// </summary>
-        /// <param name="MovieInfo">An object with fields that map to the columns of the Movie's table.</param>
+        /// <param name="movieInfo">An object with fields that map to the columns of the Movie's table.</param>
         /// <example>
         /// POST api/MovieData/UpdateMovie/208 
         /// FORM DATA / POST DATA / REQUEST BODY 
@@ -129,17 +129,17 @@ namespace PassionProject.Controllers
         ///     "Cost":"20.23"
         /// }
         /// </example>
-        public void UpdateMovie(int id, [FromBody] Movie MovieInfo)
+        public void UpdateMovie(int id, [FromBody] Movie movieInfo)
         {
             var movie = Blockbuster.Movies.SingleOrDefault(m => m.Id == id);
             if (movie != null)
             {
-                movie.Name = MovieInfo.Name;
-                movie.Poster = MovieInfo.Poster;
-                movie.Genre = MovieInfo.Genre;
-                movie.Description = MovieInfo.Description;
-                movie.DOR = MovieInfo.DOR;
-                movie.Cost = MovieInfo.Cost;
+                movie.Name = movieInfo.Name;
+                movie.Poster = movieInfo.Poster;
+                movie.Genre = movieInfo.Genre;
+                movie.Description = movieInfo.Description;
+                movie.DOR = movieInfo.DOR;
+                movie.Cost = movieInfo.Cost;
 
                 Blockbuster.SaveChanges();
             }

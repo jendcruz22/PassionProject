@@ -5,10 +5,10 @@
 
 <nav>
     <a class="navlink" href="/Movie/List">Back to Home</a>
-    <a class="dellink" href="/Movie/DeleteConfirm/@Model.Id">Delete</a>
     <a class="navlink" href="/Movie/Update/@Model.Id">Update</a>
+    <a class="dellink" href="/Movie/DeleteConfirm/@Model.Id">Delete</a>
 </nav>
-<div>
+<div class="movieInfo">
     <h2>@Model.Name</h2>
     <img class="moviePoster" src="@Model.Poster" />
     <p>Genre: @Model.Genre</p>
@@ -18,36 +18,35 @@
     <p>Cost of renting: @Model.Cost</p>
 </div>
 <div>
-    <a class="newRentalBtn" href="/Movie/NewMovieRental/@Model.Id">New Rental</a>
-
+    <a class="navlink" href="/Movie/NewMovieRental/@Model.Id">New Rental</a>
 </div>
-    <table>
-        <tr id="containershow">
-            <th>Entry ID</th>
-            <th>First Name</th>
-            <th>Last Name</th>
-            <th>Rented on</th>
-            <th>Rented till</th>
-            <th>Update</th>
-            <th>Delete</th>
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th scope="col">Entry ID</th>
+            <th scope="col">First Name</th>
+            <th scope="col">Last Name</th>
+            <th scope="col">Rented on</th>
+            <th scope="col">Rented till</th>
         </tr>
+    </thead>
+    <tbody>
         @foreach (var rental in Model.Rentals)
         {
-        <tr>
-            <td>@rental.Id</td>
-            <td>@rental.FName</td>
-            <td>@rental.LName</td>
-            <td>@rental.FDate.ToString("yyyy-MM-dd")</td>
-            <td>@rental.TDate.ToString("yyyy-MM-dd")</td>
-            <td>@rental.TDate.ToString("yyyy-MM-dd")</td>
-            <td>
-                <a href="/Rental/Edit/@rental.Id">Update</a>
-            </td>
-            <td>
-                <a href="/Rental/DeleteRentalConfirm/@rental.Id">Delete</a>
-            </td>
-        </tr>
-
-        }
+            <tr>
+                <td>@rental.Id</td>
+                <td>@rental.FName</td>
+                <td>@rental.LName</td>
+                <td>@rental.FDate.ToString("yyyy-MM-dd")</td>
+                <td>@rental.TDate.ToString("yyyy-MM-dd")</td>
+                <td>
+                    <a href="/Rental/Edit/@rental.Id">Update</a>
+                </td>
+                <td>
+                    <a href="/Rental/DeleteRentalConfirm/@rental.Id">Delete</a>
+                </td>
+            </tr>
+         }
+        </tbody>
     </table>
 
