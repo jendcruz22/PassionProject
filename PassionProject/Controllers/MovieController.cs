@@ -47,6 +47,7 @@ namespace PassionProject.Controllers
         }
 
         // POST : /Movie/Delete/{id}
+        [HttpPost]
         public ActionResult Delete(int id)
         {
             MovieDataController controller = new MovieDataController();
@@ -73,9 +74,10 @@ namespace PassionProject.Controllers
 
         // POST : /Movie/Create
         [HttpPost]
-        public ActionResult Create(string M_Name, string M_Genre, string M_Description, DateTime M_DOR, decimal M_Cost)
+        public ActionResult Create(string M_Poster, string M_Name, string M_Genre, string M_Description, DateTime M_DOR, decimal M_Cost)
         {
             Movie NewMovie = new Movie();
+            NewMovie.Poster = M_Poster;
             NewMovie.Name = M_Name;
             NewMovie.Genre = M_Genre;
             NewMovie.DOR = M_DOR;
@@ -118,11 +120,11 @@ namespace PassionProject.Controllers
             return View(SelectedMovie);
         }
 
-
         /// <summary>
         /// Receive a POST request containing information about an existing movie in the system, with new values. Conveys this information to the API, and redirects to the "Movie Show" page of our updated movie.
         /// </summary>
         /// <param name="id">Id of the Movie to update</param>
+        /// <param name="M_Poster">The updated link to the movie poster</param>
         /// <param name="M_Name">The updated movie name of the movie</param>
         /// <param name="M_Genre">The updated genre of the movie</param>
         /// <param name="M_Description">The updated description of the movie</param>
@@ -134,6 +136,7 @@ namespace PassionProject.Controllers
         /// FORM DATTA / POST DATA / REQUEST BODY
         /// {
         /// "M_Name":"Pulp Fiction",
+        /// "M_Poster":"image link",
         /// "M_Genre":"Crime, Drama",
         /// "M_Description":"The lives of two mob hitmen, a boxer, a gangster and his wife, and a pair of diner bandits intertwine in four tales of violence and redemption.",
         /// "M_DOR":"1994-10-14",
@@ -141,9 +144,10 @@ namespace PassionProject.Controllers
         /// }
         /// </example>
         [HttpPost]
-        public ActionResult Update(int id, string M_Name, string M_Genre, string M_Description, DateTime M_DOR, decimal M_Cost)
+        public ActionResult Update(int id, string M_Poster, string M_Name, string M_Genre, string M_Description, DateTime M_DOR, decimal M_Cost)
         {
             Movie MovieInfo = new Movie();
+            MovieInfo.Poster = M_Poster;
             MovieInfo.Name = M_Name;
             MovieInfo.Genre = M_Genre;
             MovieInfo.Description = M_Description;

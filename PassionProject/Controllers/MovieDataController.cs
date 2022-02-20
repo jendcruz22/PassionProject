@@ -76,6 +76,7 @@ namespace PassionProject.Controllers
         /// FORM DATA / POST DATA / REQUEST BODY 
         /// {
         /// "M_Name":"Pulp Fiction",
+        /// "M_Poster":"image link",
         /// "M_Genre":"Crime, Drama",
         /// "M_Description":"The lives of two mob hitmen, a boxer, a gangster and his wife, and a pair of diner bandits intertwine in four tales of violence and redemption.",
         /// "M_DOR":"1994-10-14",
@@ -121,6 +122,7 @@ namespace PassionProject.Controllers
         /// FORM DATA / POST DATA / REQUEST BODY 
         /// {
         ///     "Name":"Pulp Fiction",
+        ///     "Poster":"image link",
         ///     "Genre":"Crime, Drama",
         ///     "Description":"The lives of two mob hitmen, a boxer, a gangster and his wife, and a pair of diner bandits intertwine in four tales of violence and redemption.",
         ///     "DOR":"1994-10-14",
@@ -133,6 +135,7 @@ namespace PassionProject.Controllers
             if (movie != null)
             {
                 movie.Name = MovieInfo.Name;
+                movie.Poster = MovieInfo.Poster;
                 movie.Genre = MovieInfo.Genre;
                 movie.Description = MovieInfo.Description;
                 movie.DOR = MovieInfo.DOR;

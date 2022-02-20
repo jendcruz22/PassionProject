@@ -1,0 +1,19 @@
+﻿@model PassionProject.Models.Rental
+
+@{
+    ViewBag.Title = "DeleteRentalConfirm";
+}
+
+<div id="containershow">
+    <h2>Are you sure you want to delete it?</h2>
+    <p>This action cannot be undone.</p>
+
+    <form method="POST" action="/Rental/DeleteRental/@Model.Id">
+        <button class="delbutton" type="submit">
+            Confirm Delete
+        </button>
+    </form>
+
+</div>
+
+

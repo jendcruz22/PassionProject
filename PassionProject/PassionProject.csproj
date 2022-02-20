@@ -206,6 +206,8 @@
     <Compile Include="Controllers\MovieDataController.cs" />
     <Compile Include="Controllers\MovieController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\RentalController.cs" />
+    <Compile Include="Controllers\RentalDataController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -213,6 +215,10 @@
     <Compile Include="Migrations\202202041650298_AddDbModels.cs" />
     <Compile Include="Migrations\202202041650298_AddDbModels.designer.cs">
       <DependentUpon>202202041650298_AddDbModels.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202202182007255_addPoster.cs" />
+    <Compile Include="Migrations\202202182007255_addPoster.designer.cs">
+      <DependentUpon>202202182007255_addPoster.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Rental.cs" />
@@ -226,6 +232,8 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\images\icon.svg" />
+    <Content Include="Content\images\MovieERD.png" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -276,10 +284,11 @@
     <Content Include="Views\Movie\DeleteConfirm.cshtml" />
     <Content Include="Views\Movie\New.cshtml" />
     <Content Include="Views\Movie\NewMovieRental.cshtml" />
+    <Content Include="Views\Rental\Edit.cshtml" />
+    <Content Include="Views\Rental\DeleteRentalConfirm.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Content\images\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -313,6 +322,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202202041650298_AddDbModels.resx">
       <DependentUpon>202202041650298_AddDbModels.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202202182007255_addPoster.resx">
+      <DependentUpon>202202182007255_addPoster.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

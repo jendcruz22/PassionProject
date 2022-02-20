@@ -12,6 +12,10 @@
 
 <form method="POST" action="/Movie/Create">
     <div>
+        <label for="M_Poster">Poster Link: </label>
+        <input type="text" name="M_Poster" id="M_Poster" />
+    </div>
+    <div>
         <label for="M_Name">Movie Name: </label>
         <input type="text" name="M_Name" id="M_Name" />
     </div>
@@ -25,7 +29,7 @@
     </div>
     <div>
         <label for="M_DOR">Date of Release: </label>
-        <input type="text" name="M_DOR" id="M_DOR" />
+        <input type="date" name="M_DOR" id="M_DOR" />
     </div>
     <div>
         <label for="M_Cost">Cost of renting: </label>

@@ -12,6 +12,7 @@
                 c => new
                     {
                         Id = c.Int(nullable: false, identity: true),
+                        Poster = c.String(),
                         Name = c.String(),
                         Genre = c.String(),
                         Description = c.String(),
