@@ -13,10 +13,20 @@
         <input type="text" name="searchKey" autocomplete="off" />
         <input type="submit" value="Search" />
     </form>
-    @foreach (var movie in Model)
-    {
-        <div class="listitem row">
-            <div class="col-md-12"><a href="/Movie/Show/@movie.Id">@movie.Name</a></div>
+
+    <div class="container d-flex justify-content-center">
+        <div class="row">
+            @foreach (var movie in Model)
+            { 
+                <div class="col-xs-6 col-md-4 listitem">
+                    <a href="/Movie/Show/@movie.Id">
+                        <img src="@movie.Poster" class="img-fluid" alt="Responsive image">
+                        <div>
+                            @movie.Name
+                        </div>
+                    </a>
+                </div>
+            }
         </div>
-    }
+    </div>
 </div>

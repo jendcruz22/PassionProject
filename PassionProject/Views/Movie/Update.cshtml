@@ -10,35 +10,37 @@
     </nav>
 </div>
 
-<h2>Update Movie</h2>
-
 <form method="POST" action="/Movie/Update/@Model.Id">
-    <div>
-        <label for="name">Movie Name: </label>
-        <input type="text" name="name" id="name" value="@Model.Name" />
-    </div>
-    <div>
-        <label for="poster">Poster: </label>
-        <input type="text" name="poster" id="poster" value="@Model.Poster" />
-    </div>
-    <div>
-        <label for="genre">Movie Genre: </label>
-        <input type="text" name="genre" id="genre" value="@Model.Genre" />
-    </div>
-    <div>
-        <label for="description">Description: </label>
-        <input type="text" name="description" id="description" value="@Model.Description" />
-    </div>
-    <div>
-        <label for="dor">Date of Release: </label>
-        <input type="text" name="dor" id="dor" value="@Model.DOR" />
-    </div>
-    <div>
-        <label for="cost">Cost of renting: </label>
-        <input type="text" name="cost" id="cost" value="@Model.Cost" />
-    </div>
-    <div>
-        <input type="submit" value="Update Movie" />
+    <div class="form-horizontal">
+        <h2>Update Movie</h2>
+        <hr />
+        <div class="form-group">
+            <label for="name">Movie Name: </label>
+            <input type="text" name="name" id="name" value="@Model.Name" />
+        </div>
+        <div class="form-group">
+            <label for="poster">Poster: </label>
+            <input type="text" name="poster" id="poster" value="@Model.Poster" />
+        </div>
+        <div class="form-group">
+            <label for="genre">Movie Genre: </label>
+            <input type="text" name="genre" id="genre" value="@Model.Genre" />
+        </div>
+        <div class="form-group">
+            <label for="description">Description: </label>
+            <input type="text" name="description" id="description" value="@Model.Description" />
+        </div>
+        <div class="form-group">
+            <label for="dor">Date of Release: </label>
+            <input type="text" name="dor" id="dor" value="@Model.DOR" />
+        </div>
+        <div class="form-group">
+            <label for="cost">Cost of renting: </label>
+            <input type="text" name="cost" id="cost" value="@Model.Cost" />
+        </div>
+        <div>
+            <input class="btn btn-default" type="submit" value="Update Movie" />
+        </div>
     </div>
 </form>
 

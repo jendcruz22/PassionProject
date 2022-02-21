@@ -4,13 +4,14 @@
 }
 
 <nav>
-    <a class="navlink" href="/Movie/List">Back to Home</a>
+    <a class="navlink" href="/Movie/List">Home</a>
     <a class="navlink" href="/Movie/Update/@Model.Id">Update</a>
     <a class="dellink" href="/Movie/DeleteConfirm/@Model.Id">Delete</a>
 </nav>
 <div class="movieInfo">
     <h2>@Model.Name</h2>
-    <img class="moviePoster" src="@Model.Poster" />
+    <img class="moviePoster" src="@Model.Poster" alt="Movie Poster"/>
+    <p><a href="@Model.Poster">Source of image</a></p>
     <p>Genre: @Model.Genre</p>
     <p>Movie ID: @Model.Id</p>
     <p>Description: @Model.Description</p>

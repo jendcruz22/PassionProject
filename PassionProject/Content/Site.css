@@ -32,7 +32,6 @@ textarea {
 nav {
     font-family: "Amaranth";
     overflow: hidden;
-    margin-bottom: 30px;
 }
 
 .navbar-brand {
@@ -41,14 +40,13 @@ nav {
 
 .navlink {
     float: left;
-    margin-right: 15px;
     background-color: white;
     color: black;
     border: 2px solid #333333;
     padding: 16px 32px;
     text-align: center;
     text-decoration: none;
-    margin: 4px 2px;
+    margin: 10px 5px;
     transition-duration: 0.4s;
     cursor: pointer;
 }
@@ -60,14 +58,13 @@ nav {
 
 .dellink {
     float: left;
-    margin-right: 15px;
     background-color: #fff;
     color: black;
     border: 2px solid #FF0000;
     padding: 16px 32px;
     text-align: center;
     text-decoration: none;
-    margin: 4px 2px;
+    margin: 10px 5px;
     transition-duration: 0.4s;
     cursor: pointer;
 }
@@ -89,11 +86,33 @@ nav {
     margin: 4px 2px;
 }
 
-#containerlist, #containershow {
-    margin: 0 auto;
-    margin-top: 80px;
+.container {
+    margin-top: 10px;
+    display: grid;
 }
 
+@media only screen and (max-width: 600px) {
+    .container {
+        display: block;
+    }
+
+    .listitem {
+        width: -webkit-fill-available;
+    }
+
+    .listitem img {
+        max-width: -webkit-fill-available;
+    }
+}
+
+#containerlist, #containershow {
+    margin: 0 auto;
+    margin-top: 20px;
+}
+
+.form-group label{
+    margin-left: 15px;
+}
 .movieInfo {
     text-align: center
 }
@@ -104,8 +123,18 @@ nav {
 }
 
 .listitem {
-    margin: 10px 0;
+    border: thin solid lightgrey;
+    text-align: center;
+    padding: 10px;
 }
+
+    .listitem img {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 200px;
+        height: 300px;
+    }
 
 .newRentalBtn {
     display: block;

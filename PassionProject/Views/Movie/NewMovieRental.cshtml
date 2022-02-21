@@ -14,28 +14,30 @@
 <h2>New Rental</h2>
 
 <form method="POST" action="/Movie/CreateRental">
-    <div>
-        <label for="fName">First Name: </label>
-        <input type="text" name="fName" id="fName" />
-    </div>
-    <div>
-        <label for="lName">Last Name: </label>
-        <input type="text" name="lName" id="lName" />
-    </div>
-    <div class="rentalMovieId">
-        <label for="movieId">Movie Id: </label>
-        <input type="number" name="movieId" id="movieId" value="@Model.Id" />
-    </div>
-    <div>
-        <label for="fDate">Date of Purchase (yyyy-mm-dd): </label>
-        <input type="date" name="fDate" id="fDate" />
-    </div>
-    <div>
-        <label for="tDate">Date of Return (yyyy-mm-dd): </label>
-        <input type="date" name="TDate" id="TDate" />
-    </div>
-    <div>
-        <input type="submit" value="Add Rental" />
+    <div class="form-horizontal">
+        <div class="form-group">
+            <label for="fName">First Name: </label>
+            <input type="text" name="fName" id="fName" />
+        </div>
+        <div class="form-group">
+            <label for="lName">Last Name: </label>
+            <input type="text" name="lName" id="lName" />
+        </div>
+        <div class="form-group rentalMovieId">
+            <label for="movieId">Movie Id: </label>
+            <input type="number" name="movieId" id="movieId" value="@Model.Id" />
+        </div>
+        <div class="form-group">
+            <label for="fDate">Date of Purchase (yyyy-mm-dd): </label>
+            <input type="date" name="fDate" id="fDate" />
+        </div>
+        <div class="form-group">
+            <label for="tDate">Date of Return (yyyy-mm-dd): </label>
+            <input type="date" name="TDate" id="TDate" />
+        </div>
+        <div>
+            <input class="btn btn-default" type="submit" value="Add Rental" />
+        </div>
     </div>
 </form>
 
