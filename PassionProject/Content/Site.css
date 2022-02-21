@@ -10,7 +10,7 @@ h1, h2, h3, h4 {
     font-family: "Amaranth";
 }
 
-p {
+p, div {
     font-family: "Open Sans";
 }
 
@@ -90,7 +90,6 @@ nav {
 }
 
 #containerlist, #containershow {
-    width: 80%;
     margin: 0 auto;
     margin-top: 80px;
 }
@@ -133,3 +132,7 @@ nav {
         float: none;
         margin-top: 50px;
     }
+
+.rentalMovieId {
+    display: none;
+}

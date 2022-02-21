@@ -23,7 +23,7 @@ namespace PassionProject.Controllers
         /// <returns>
         /// A list of Movie Objects with fields mapped to the database column values (movie name, movie genre, date of release, description, cost of renting).
         /// </returns>
-        /// <example>GET api/MovieData/ListAuthors -> {Author Object, Author Object, Author Object...}</example>
+        /// <example>GET api/MovieData/ListMovies -> {Movie Object, Movie Object, Movie Object...}</example>
         [HttpGet]
         [Route("api/moviedata/listmovies/{searchKey?}")]
         public IEnumerable<Movie> ListMovies(string searchKey = null)
@@ -43,7 +43,7 @@ namespace PassionProject.Controllers
         /// </summary>
         /// <param name="id">The Movie ID</param>
         /// <returns>Movie object containing information about the movie with a matching ID. Empty Movie Object if the ID does not match any movies in the system.</returns>
-        /// <example>api/MovieData/FindMovie/5 -> {Author Object}</example>
+        /// <example>api/MovieData/FindMovie/5 -> {Movie Object}</example>
         [HttpGet]
         [Route("api/moviedata/findmovie/{id}")]
         public Movie FindMovie(int id)
@@ -52,7 +52,7 @@ namespace PassionProject.Controllers
         }
 
         /// <summary>
-        /// Deletes a movie from the connected MySql Database if the ID of that movie exists. | Non-Deterministic.
+        /// Deletes a movie from the database if the ID of that movie exists. | Non-Deterministic.
         /// </summary>
         /// <param name="id">The ID of the movie.</param>
         /// <example> POST : /api/MovieData/DeleteMovie/5</example>
@@ -91,29 +91,6 @@ namespace PassionProject.Controllers
         }
 
         /// <summary>
-        /// Adds a Movie Rental to the MySQL Database.
-        /// </summary>
-        /// <param name="newMovieRental">An object with fields that map to the columns of the rental's table. | Non-Deterministic.</param>
-        /// <example>
-        /// POST api/MovieData/AddMovieRental
-        /// FORM DATA / POST DATA / REQUEST BODY 
-        /// {
-        /// "MovieId":"5",
-        /// "FName":"Jenny",
-        /// "LName":"Dcruz",
-        /// "FDate":"2022-01-20",
-        /// "TDate":"202-01-31"
-        /// 
-        /// }
-        /// </example>
-        [HttpPost]
-        public void AddMovieRental(Rental newMovieRental)
-        {
-            Blockbuster.Rentals.Add(newMovieRental);
-            Blockbuster.SaveChanges();
-        }
-
-        /// <summary>
         /// Updates an Movie on the MySQL Database. | Non-Deterministic.
         /// </summary>
         /// <param name="movieInfo">An object with fields that map to the columns of the Movie's table.</param>
@@ -144,6 +121,30 @@ namespace PassionProject.Controllers
                 Blockbuster.SaveChanges();
             }
         }
+
+        /// <summary>
+        /// Adds a Movie Rental to the MySQL Database.
+        /// </summary>
+        /// <param name="newMovieRental">An object with fields that map to the columns of the rental's table. | Non-Deterministic.</param>
+        /// <example>
+        /// POST api/MovieData/AddMovieRental
+        /// FORM DATA / POST DATA / REQUEST BODY 
+        /// {
+        /// "MovieId":"5",
+        /// "FName":"Jenny",
+        /// "LName":"Dcruz",
+        /// "FDate":"2022-01-20",
+        /// "TDate":"202-01-31"
+        /// 
+        /// }
+        /// </example>
+        [HttpPost]
+        public void AddMovieRental(Rental newMovieRental)
+        {
+            Blockbuster.Rentals.Add(newMovieRental);
+            Blockbuster.SaveChanges();
+        }
+
     }
 }
 

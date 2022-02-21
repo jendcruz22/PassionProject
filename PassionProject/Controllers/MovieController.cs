@@ -37,39 +37,10 @@ namespace PassionProject.Controllers
             return View(selectedMovie);
         }
 
-        // GET : /Movie/DeleteConfirm/{id}
-        public ActionResult DeleteConfirm(int id)
-        {
-            MovieDataController controller = new MovieDataController();
-            Movie newMovie = controller.FindMovie(id);
-
-            return View(newMovie);
-        }
-
-        // POST : /Movie/Delete/{id}
-        [HttpPost]
-        public ActionResult Delete(int id)
-        {
-            MovieDataController controller = new MovieDataController();
-            controller.DeleteMovie(id);
-            return RedirectToAction("List");
-        }
-
         // GET : /Movie/New
         public ActionResult New()
         {
             return View();
-        }
-
-        // GET : /Movie/NewMovieRental/{id}
-        [HttpGet]
-        [Route("Movie/NewMovieRental/{id}")]
-        public ActionResult NewMovieRental(int id)
-        {
-            MovieDataController controller = new MovieDataController();
-            Movie selectedMovie = controller.FindMovie(id);
-
-            return View(selectedMovie);
         }
 
         // POST : /Movie/Create
@@ -86,23 +57,6 @@ namespace PassionProject.Controllers
 
             MovieDataController controller = new MovieDataController();
             controller.AddMovie(newMovie);
-
-            return RedirectToAction("List");
-        }
-
-        // POST : /Movie/CreateRental
-        [HttpPost]
-        public ActionResult CreateRental(string FName, string LName, int MovieId, DateTime FDate, DateTime TDate)
-        {
-            Rental newMovieRental = new Rental();
-            newMovieRental.FName = FName;
-            newMovieRental.LName = LName;
-            newMovieRental.MovieId = MovieId;
-            newMovieRental.FDate = FDate;
-            newMovieRental.TDate = TDate;
-
-            MovieDataController controller = new MovieDataController();
-            controller.AddMovieRental(newMovieRental);
 
             return RedirectToAction("List");
         }
@@ -133,7 +87,7 @@ namespace PassionProject.Controllers
         /// <returns>A dynamic webpage which provides the current information of the movie.</returns>
         /// <example>
         // POST : /Movie/Update/{id}
-        /// FORM DATTA / POST DATA / REQUEST BODY
+        /// FORM DATA / POST DATA / REQUEST BODY
         /// {
         /// "name":"Pulp Fiction",
         /// "poster":"image link",
@@ -158,6 +112,52 @@ namespace PassionProject.Controllers
             controller.UpdateMovie(id, movieInfo);
 
             return RedirectToAction("Show/" + id);
+        }
+
+        // GET : /Movie/DeleteConfirm/{id}
+        public ActionResult DeleteConfirm(int id)
+        {
+            MovieDataController controller = new MovieDataController();
+            Movie newMovie = controller.FindMovie(id);
+
+            return View(newMovie);
+        }
+
+        // POST : /Movie/Delete/{id}
+        [HttpPost]
+        public ActionResult Delete(int id)
+        {
+            MovieDataController controller = new MovieDataController();
+            controller.DeleteMovie(id);
+            return RedirectToAction("List");
+        }
+
+        // GET : /Movie/NewMovieRental/{id}
+        [HttpGet]
+        [Route("Movie/NewMovieRental/{id}")]
+        public ActionResult NewMovieRental(int id)
+        {
+            MovieDataController controller = new MovieDataController();
+            Movie selectedMovie = controller.FindMovie(id);
+
+            return View(selectedMovie);
+        }
+
+        // POST : /Movie/CreateRental
+        [HttpPost]
+        public ActionResult CreateRental(string FName, string LName, int MovieId, DateTime FDate, DateTime TDate)
+        {
+            Rental newMovieRental = new Rental();
+            newMovieRental.FName = FName;
+            newMovieRental.LName = LName;
+            newMovieRental.MovieId = MovieId;
+            newMovieRental.FDate = FDate;
+            newMovieRental.TDate = TDate;
+
+            MovieDataController controller = new MovieDataController();
+            controller.AddMovieRental(newMovieRental);
+
+            return RedirectToAction("List");
         }
     }
 }

@@ -9,7 +9,13 @@ namespace PassionProject.Controllers
 {
     public class RentalController : Controller
     {
-        // GET: Rental
+
+        /// <summary>
+        /// Routes a dynamically generated Rentals Update Page. Gathers information from the blockbuster database.
+        /// </summary>
+        /// <param name="id">Entry Id of the Rental</param>
+        /// <returns>A dynamic Update Rentals webpage which provides the current information of the rental and asks the user for new information as part of a form</returns>
+        // <example>GET : /Rental/Edit/5</example>
         public ActionResult Edit(int id)
         {
             var controller = new RentalDataController();
@@ -17,6 +23,25 @@ namespace PassionProject.Controllers
             return View(selectedRental);
         }
 
+        /// <summary>
+        /// Receive a POST request containing information about an existing rental against a movie in the system, with new values. Conveys this information to the API, and redirects to the List of movies page.
+        /// </summary>
+        /// <param name="id">Entry id of the rental</param>
+        /// <param name="fName">First name of the person renting the movie</param>
+        /// <param name="lName">Last name of the person renting the movie</param>
+        /// <param name="fDate">The date from when the movie is being rented</param>
+        /// <param name="tDate">The date till when the movie is being rented</param>
+        /// <returns>A dynamic webpage which provides the current information of the rental.</returns>
+        /// <example>
+        // POST : /Rental/Update/{id}
+        /// FORM DATA / POST DATA / REQUEST BODY
+        /// {
+        /// "fname":"Chris",
+        /// "lname":"Frank",
+        /// "fdate":"2022-01-02",
+        /// "tdate":"2022-01-12"
+        /// }
+        /// </example>
         [HttpPost]
         public ActionResult Update(int id, string fName, string lName, DateTime fDate, DateTime tDate)
         {
