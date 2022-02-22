@@ -12,10 +12,10 @@ This application allows you to perform CRUD operations on either tables i.e. the
 ### **Note**: All movie poster image links used in this project have been sourced from IMDb or Amazon.ca .
 
 ## **Table of Content:**
-1. <a href="fs">Folder Structure</a>
-2. <a href="scope">Scope</a>
-3. <a href="rts">Running this project</a>
-4. <a href="demo">Demonstration</a>
+1. <a href="#fs">Folder Structure</a>
+2. <a href="#scope">Scope</a>
+3. <a href="#rts">Running this project</a>
+4. <a href="#demo">Demonstration</a>
 
 ## 1. <a name="fs">**Folder Structure:**</a>
 ```
