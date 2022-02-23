@@ -54,11 +54,11 @@ PassionProject
 *   Manage list of movies
 *   Manage list of rentals renting a particular movie
 
-## 3. <a name="rtp">**Running this project**</a>
+## 3. <a name="rts">**Running this project**</a>
 *  Clone the repository
 *  Tools > Nuget Package Manager > Package Manage Console > Update-Database
 *  Check the database created using the server explorer. (View > Server Explorer)
 * Run the <a hrerf="https://github.com/jendcruz22/PassionProject/blob/main/PassionProject/Views/Movie/List.cshtml">List view</a> to load the home page of the application
 
 ## 4. <a name="demo">**Demonstration video:**</a>
-*  
+* Click <a href="https://youtu.be/HHFcjsPfpRE">**here**</a> to view the project's demonstration.
