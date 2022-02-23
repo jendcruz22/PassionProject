@@ -61,4 +61,4 @@ PassionProject
 * Run the <a hrerf="https://github.com/jendcruz22/PassionProject/blob/main/PassionProject/Views/Movie/List.cshtml">List view</a> to load the home page of the application
 
 ## 4. <a name="demo">**Demonstration video:**</a>
-* Click <a href="https://youtu.be/HHFcjsPfpRE">**here**</a> to view the project's demonstration.
+* Click <a href="https://youtu.be/HGuZP3ZXqog">**here**</a> to view the project's demonstration.
