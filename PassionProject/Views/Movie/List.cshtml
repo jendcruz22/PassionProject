@@ -15,16 +15,18 @@
     </form>
 
     <div class="container d-flex justify-content-center">
-        <div class="row">
+        <div class="row list">
             @foreach (var movie in Model)
             { 
                 <div class="col-xs-6 col-md-4 listitem">
-                    <a href="/Movie/Show/@movie.Id">
-                        <img src="@movie.Poster" class="img-fluid" alt="Responsive image">
-                        <div>
-                            <h3>@movie.Name</h3>
-                        </div>
-                    </a>
+                    <div class="list-content">
+                        <a href="/Movie/Show/@movie.Id">
+                            <img src="@movie.Poster" class="img-fluid" alt="Responsive image">
+                            <div>
+                                <h3>@movie.Name</h3>
+                            </div>
+                        </a>
+                    </div>
                 </div>
             }
         </div>

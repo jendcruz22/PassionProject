@@ -122,7 +122,13 @@ nav {
     height: 300px;
 }
 
+.list {
+    display: flex;
+    flex-wrap: wrap;
+}
+
 .listitem {
+    display: flex;
     border: thin solid lightgrey;
     text-align: center;
     padding: 10px;
@@ -135,6 +141,12 @@ nav {
         width: 200px;
         height: 300px;
     }
+
+.list-content {
+    width: 100%;
+    background-color: #ccc;
+    padding: 10px;
+}
 
 .newRentalBtn {
     display: block;
